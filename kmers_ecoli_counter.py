@@ -43,17 +43,17 @@ try:
         kmer_set =  set(open(file).read().split())
         #create dictionary
         group_kmers[file_name] = kmer_set
-        print(file_name)
+#        print(file_name)
 
     # get dictionary with numbers of kmers
 
     num_kmers = {}
     for group in group_kmers.keys():
         num_kmers[group] = len(group_kmers[group])
-        print(group, len(group_kmers[group]))
+#        print(group, len(group_kmers[group]))
 
     num_kmers = dict(sorted(num_kmers.items()))
-    print(num_kmers)
+#    print(num_kmers)
 
     sample_df = pd.DataFrame()
     sample_df['Phylogroups'] = num_kmers.keys()
@@ -79,15 +79,15 @@ try:
                 entry = seq2kmers.intersection(group_kmers[group])
                 if len(entry) > 0:
                     freqMap[group] = freqMap[group] + 1
-        print(freqMap)    
+#        print(freqMap)    
         sample_df[f'{sample_name}'+' kmers'] = freqMap.values()  
-        print(sample_name)
+#        print(sample_name)
         #normalization of counts
         norm = {}
         for key in freqMap.keys():
-            print(freqMap[key]* 100000000/len_fastq/num_kmers[key])
+#            print(freqMap[key]* 100000000/len_fastq/num_kmers[key])
             norm[key] = freqMap[key]* 100000000/len_fastq/num_kmers[key]
-        print(len_fastq)
+#        print(len_fastq)
         #sample_df[f'{sample_name}'+'_group'] = norm.keys()
         #sample_df[sample_name] = norm.values() 
         sample_df[f'{sample_name}'+' %'] = norm.values() 
