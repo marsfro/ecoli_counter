@@ -5,6 +5,7 @@ import pandas as pd
 import datetime
 from Bio import SeqIO
 
+
 # Creating a command line argument parser
 parser = argparse.ArgumentParser(description='Script for counting relative abandance of E.coli phylogroups.')
 parser.add_argument('-i', '--input', help='The metagenome fastq file')
