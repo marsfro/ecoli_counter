@@ -58,15 +58,15 @@ The script generates a CSV file with the following columns:
 
 The percentage of reads with k-mers in a phylogroup is calculated using the formula:
 
-\[
+```math
 \text{Percentage of reads} = \frac{N_{\text{reads}} \times 500,000}{N_{\text{kmers}} \times N_{\text{metagenome}}} \times 100
-\]
+```
 
 Where:
-- \(N_{\text{reads}}\) = Number of reads containing at least one k-mer of the specified phylogroup.
-- \(500,000\) = The average number of k-mers across all E. coli phylogroups.
-- \(N_{\text{kmers}}\) = Number of k-mers in this phylogroup.
-- \(N_{\text{metagenome}}\) = Total number of reads in the metagenome.
+- $\(N_{\text{reads}}\)$ = Number of reads containing at least one k-mer of the specified phylogroup.
+- $\(500,000\)$ = The average number of k-mers across all E. coli phylogroups.
+- $\(N_{\text{kmers}}\)$ = Number of k-mers in this phylogroup.
+- $\(N_{\text{metagenome}}\)$ = Total number of reads in the metagenome.
 
 This formula calculates the percentage of k-mers relative to the total number of k-mers for each phylogroup. It determines how many reads contain at least one k-mer of a certain phylogroup.
 
